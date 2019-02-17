@@ -2,7 +2,23 @@
 DosR is a transcription factor that regulates the metabolic activity of Mycobacterium tubercolosis. In hypoxic conditions, it 
 can persist in a latent state within the human body for many years. 
 There are specific DNA sequences where DosR can bind, and the discovery of these binding sites has clinical significance. 
-Here, the RandomizedMotifSearch algorithm has been used to find motifs that could be the DosR binding sites."""
+Here, the RandomizedMotifSearch algorithm has been used to find motifs that could be the DosR binding sites.
+
+Randomized Algorithm for Motif Finding: a collection of randomly chosen k-mers from each string is chosen as the starting BestMotifs. 
+By creating a Profile and finding the profile-most probable k-mer from each string(Motifs(Profile(motifs)etc.), 
+we get a BestMotifs with lower and lower score, up to a point where it has found the local optimum. 
+If RandomisedMotifSearch is run many times, we can choose the best one from many returned BestMotifs.
+In particular, only if one of the implanted motifs is chosen as a random motif, then that may eventually lead the algorithm closer, 
+or to the actual set of implanted motifs. If Dna was random then the profile would be completely uniform. 
+But Dna is not random because of the higher probability of the motifs implanted,
+and the profile points toward the implanted IF one of the implanted motifs is chosen by chance. That is its weakness, 
+as it is guaranteed to reach the best scoring collection of Motifs that can be reached from its starting point (local optimum),
+but if its randomly chosen starting point is wrong then it cannot reach the best solution from there, which is why it is run many times
+to ensure that it finds a global, not just local optimum.
+
+The results of the rpject are at the end.
+
+"""
 
 import random
 
@@ -93,6 +109,7 @@ def ProfileMostProbablePattern(Text, k, Profile):
 			BestMotifs = Motifs
 	return BestMotifs
 
+#Pseudocounts are used to avoid the issue of zero probability.
 def CountWithPseudocounts(Motifs):
 	count = {}
 	strLen = len(Motifs[0])
@@ -144,6 +161,7 @@ def RandomMotifs(Dna, k, t):
 		i = randpos - 1
 		RandMots.append(Dna[strindex][i:i+k])
 	return RandMots
+
 
 def RandomizedMotifSearch(Dna, k, t):
 	M = RandomMotifs(Dna, k, t)
