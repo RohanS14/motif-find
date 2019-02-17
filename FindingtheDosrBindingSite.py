@@ -1,6 +1,7 @@
 """
-DosR is a transcription factor that regulates the metabolic activity of Mycobacterium tubercolosis. In hypoxic conditions, it can persist in a latent state within the human body for many
-years. There are specific DNA sequences where DosR can bind, and the discovery of these binding sites has clinical significance. 
+DosR is a transcription factor that regulates the metabolic activity of Mycobacterium tubercolosis. In hypoxic conditions, it 
+can persist in a latent state within the human body for many years. 
+There are specific DNA sequences where DosR can bind, and the discovery of these binding sites has clinical significance. 
 Here, the RandomizedMotifSearch algorithm has been used to find motifs that could be the DosR binding sites."""
 
 import random
@@ -182,7 +183,8 @@ print Score(BestMotifs)
 
 """Results of project
 
-BestMotifs = ['GCGGACGAATGACCC', 'ATCGACCCGCGGCCC', 'ACCGTCGATGTGCCC', 'ATCGATCATCGGCCA', 'AAGGCCGAACGACCC', 'GAGGACCTTCGGCCC', 'GCGGACAAATGGCCC', 'TGGGACTTTCGGCCC', 'AAGGACTAACGGCCC', 'GGCCACCAATCGCCC']
+BestMotifs = ['GCGGACGAATGACCC', 'ATCGACCCGCGGCCC', 'ACCGTCGATGTGCCC', 'ATCGATCATCGGCCA', 'AAGGCCGAACGACCC',
+	      'GAGGACCTTCGGCCC', 'GCGGACAAATGGCCC', 'TGGGACTTTCGGCCC','AAGGACTAACGGCCC', 'GGCCACCAATCGCCC']
 Score(BestMotifs) = 43
 
 """
