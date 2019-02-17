@@ -1,4 +1,6 @@
 """
+FINDING THE DOSR BINDING SITE
+
 DosR is a transcription factor that regulates the metabolic activity of Mycobacterium tubercolosis. In hypoxic conditions, it 
 can persist in a latent state within the human body for many years. 
 There are specific DNA sequences where DosR can bind, and the discovery of these binding sites has clinical significance. 
@@ -16,7 +18,7 @@ as it is guaranteed to reach the best scoring collection of Motifs that can be r
 but if its randomly chosen starting point is wrong then it cannot reach the best solution from there, which is why it is run many times
 to ensure that it finds a global, not just local optimum.
 
-The results of the rpject are at the end.
+The results of the project are at the end.
 
 """
 
